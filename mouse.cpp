@@ -805,8 +805,8 @@ struct TextTool : ToolBase
         textEditWindow.GetEditRect(&rc);
         rc.InflateRect(-GRIP_SIZE / 2, -GRIP_SIZE / 2);
 
-        // Draw the text
-        INT style = (toolsModel.IsBackgroundTransparent() ? 0 : 1);
+        // Draw the text with transparent background
+        INT style = 0; // Always use transparent background
         Text(hdc, rc.left, rc.top, rc.right, rc.bottom, m_fg, m_bg, szText,
              textEditWindow.GetFont(), style);
     }
